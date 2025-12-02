@@ -1,38 +1,53 @@
-# sv
+# Brady Kearley - Personal Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A minimal, time-themed portfolio website built with SvelteKit. Features live millisecond-precision timestamps and countdown timers throughout the design.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Live Timestamps** - Real-time clock with millisecond precision
+- **Countdown Timers** - Dynamic "time since" counters for projects and life events
+- **Expandable Sections** - Smooth slide animations for project and experience details
+- **Dark/Light Theme** - Toggle between themes with persistent styling
+- **Responsive Design** - Clean layout that works on all devices
+
+## Tech Stack
+
+- [SvelteKit](https://kit.svelte.dev/) - Full-stack framework
+- [Svelte 5](https://svelte.dev/) - With runes ($state) for reactivity
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Vite](https://vitejs.dev/) - Build tool
+
+## Getting Started
+
+Install dependencies:
 
 ```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start the development server:
 
 ```sh
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
 ## Building
 
-To create a production version of your app:
+Create a production build:
 
 ```sh
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview the build:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```sh
+npm run preview
+```
+
+## Author
+
+**Brady Kearley**  
+- GitHub: [@BradyKearley](https://github.com/BradyKearley)
+- LinkedIn: [kearleyb](https://linkedin.com/in/kearleyb)
+- Website: [bradykearley.me](https://bradykearley.me)
