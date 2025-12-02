@@ -29,7 +29,6 @@
   $: hours = Math.floor((absDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   $: minutes = Math.floor((absDiff % (1000 * 60 * 60)) / (1000 * 60));
   $: seconds = Math.floor((absDiff % (1000 * 60)) / 1000);
-  $: milliseconds = absDiff % 1000;
 </script>
 
 <div class="countdown {size}">
@@ -46,11 +45,8 @@
   <span class="value">{minutes.toString().padStart(2, "0")}</span><span
     class="unit">m</span
   >
-  <span class="value">{seconds.toString().padStart(2, "0")}</span><span
+  <span class="seconds">{seconds.toString().padStart(2, "0")}</span><span
     class="unit">s</span
-  >
-  <span class="ms">{milliseconds.toString().padStart(3, "0")}</span><span
-    class="unit">ms</span
   >
 </div>
 
@@ -100,7 +96,7 @@
     margin-right: 0.5em;
   }
 
-  .ms {
+  .seconds {
     color: var(--accent);
   }
 

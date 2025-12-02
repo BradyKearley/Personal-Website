@@ -440,7 +440,7 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <LiveTime size="sm" showDate={true} showMilliseconds={true} />
+    <LiveTime size="sm" showDate={true} />
   </footer>
 </main>
 
