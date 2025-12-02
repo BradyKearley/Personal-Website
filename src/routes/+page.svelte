@@ -251,7 +251,7 @@
     </div>
 
     <div class="countdown-row">
-      <Countdown targetDate={graduationDate} label="graduation" />
+      <Countdown targetDate={graduationDate} label="graduating in" />
     </div>
 
     <div class="list-section">
@@ -285,21 +285,7 @@
     </div>
 
     <div class="countdown-row">
-      <Countdown targetDate={coopStartDate} label="availability" />
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- Skills -->
-  <section class="section">
-    <div class="section-header">
-      <span class="section-label">// skills</span>
-    </div>
-    <div class="tags">
-      {#each skills as skill}
-        <span class="tag">{skill}</span>
-      {/each}
+      <Countdown targetDate={coopStartDate} label="available in" />
     </div>
   </section>
 
@@ -396,6 +382,20 @@
           {/each}
         </ul>
       {/if}
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Skills -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">// skills</span>
+    </div>
+    <div class="tags">
+      {#each skills as skill}
+        <span class="tag">{skill}</span>
+      {/each}
     </div>
   </section>
 
