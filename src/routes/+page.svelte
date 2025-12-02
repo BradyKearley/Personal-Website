@@ -481,7 +481,8 @@
   /* Hero */
   .hero {
     text-align: center;
-    padding: var(--space-xl) 0;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-xl);
   }
 
   .hero-time {
