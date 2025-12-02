@@ -148,6 +148,7 @@
 
 <svelte:head>
   <title>Brady | Developer</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </svelte:head>
 
 <main class="page">
