@@ -19,8 +19,17 @@
 
   const projects = [
     {
+      name: "Personal Portfolio",
+      date: new Date("2025-12-01T18:30:45.127"),
+      desc: "Minimal time-themed portfolio with live timestamps",
+      details:
+        "Built a unique portfolio website featuring millisecond-precision live timestamps and countdown timers. Designed with a minimal aesthetic using SvelteKit, TypeScript, and Svelte 5 runes for state management.",
+      github: "https://github.com/BradyKearley/Personal-Website",
+      tags: ["SvelteKit", "TypeScript"],
+    },
+    {
       name: "Boop Bot Keybound",
-      date: new Date("2025-01-18"),
+      date: new Date("2025-01-18T14:23:17.482"),
       desc: "1st place CuHacking 2025 - Puzzle platformer",
       details:
         "Developed an innovative puzzle platformer featuring CuHacking's logo as the playable character. Built custom level design mechanics and physics systems in Godot, earning first place overall at CuHacking 2025.",
@@ -29,7 +38,7 @@
     },
     {
       name: "Self Driving Race Car",
-      date: new Date("2025-01-10"),
+      date: new Date("2025-01-10T09:41:52.319"),
       desc: "ML car using PPO reinforcement learning",
       details:
         "Created an AI model to autonomously drive a car around a track using reinforcement learning. Implemented the PPO (Proximal Policy Optimization) algorithm with Unity ML-Agents and CUDA acceleration for training.",
@@ -38,7 +47,7 @@
     },
     {
       name: "Plants Vs Pesticides",
-      date: new Date("2024-12-01"),
+      date: new Date("2024-12-01T16:05:33.756"),
       desc: "1st place UI/UX - uOttawa Hack",
       details:
         "Won first place in the UI/UX challenge at uOttawa Hack 7. Created an engaging game with custom visual and auditory elements, focusing on intuitive user experience and polished interface design.",
@@ -47,7 +56,7 @@
     },
     {
       name: "Steganography Encryption",
-      date: new Date("2024-10-15"),
+      date: new Date("2024-10-15T11:28:09.641"),
       desc: "RSA encryption + image steganography",
       details:
         "Produced government-level RSA encryption and implemented steganography techniques for secure data transfer. Messages are encrypted then hidden within image files, making the data invisible to casual observation.",
@@ -56,7 +65,7 @@
     },
     {
       name: "Carleton 360+",
-      date: new Date("2024-09-28"),
+      date: new Date("2024-09-28T19:52:44.203"),
       desc: "Hack the Tunnels - Enhanced search UI",
       details:
         "Enhanced user experience with improved search capabilities using Prisma database and redesigned UI/UX for key pages. Built during Hack the Tunnels hackathon at Carleton University.",
@@ -65,7 +74,7 @@
     },
     {
       name: "Nurture",
-      date: new Date("2024-01-20"),
+      date: new Date("2024-01-20T13:17:28.894"),
       desc: "Hack the Hills - Firebase auth + analytics",
       details:
         "Implemented secure backend with Firebase authentication and Google Analytics integration. Designed seamless UI/UX with a natural theme for this wellness-focused application.",
@@ -74,7 +83,7 @@
     },
     {
       name: "CS50 Final Project",
-      date: new Date("2023-12-01"),
+      date: new Date("2023-12-01T20:36:11.567"),
       desc: "Harvard CS50 - 2D game with custom sprites",
       details:
         "Created object-based entities using nodes and GDScript for Harvard's CS50 course. Designed custom 2D sprites and original music for a complete gaming experience.",
@@ -107,9 +116,9 @@
       role: "Laydown Operator (Mixing)",
       company: "Goodyear",
       period: "May 2024 - Sep 2024",
-      desc: "Manufacturing operations",
+      desc: "Rubber quality testing",
       details:
-        "Operated mixing equipment in tire manufacturing facility. Maintained quality standards, followed safety protocols, and worked as part of a team in a fast-paced industrial environment.",
+        "Tested the quality of rubber compounds to ensure they met manufacturing specifications. Performed quality control checks, documented results, and worked with the production team to maintain consistent material standards in a fast-paced industrial environment.",
     },
   ];
 
