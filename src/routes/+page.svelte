@@ -900,5 +900,32 @@
     .hero h1 {
       font-size: 2rem;
     }
+
+    .project-toggle,
+    .experience-toggle {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    .project-right,
+    .experience-right {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .project-main,
+    .experience-main {
+      flex-wrap: wrap;
+    }
+
+    .project-desc {
+      display: block;
+      margin-top: var(--space-xs);
+    }
+
+    .project-desc::before {
+      display: none;
+    }
   }
 </style>
