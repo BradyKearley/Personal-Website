@@ -17,16 +17,7 @@
     "Cypress",
   ];
 
-  const projects = [
-    {
-      name: "Personal Portfolio",
-      date: new Date("2025-12-01T18:30:45.127"),
-      desc: "Minimal time-themed portfolio with live timestamps",
-      details:
-        "Built a unique portfolio website featuring millisecond-precision live timestamps and countdown timers. Designed with a minimal aesthetic using SvelteKit, TypeScript, and Svelte 5 runes for state management.",
-      github: "https://github.com/BradyKearley/Personal-Website",
-      tags: ["SvelteKit", "TypeScript"],
-    },
+  const featuredProjects = [
     {
       name: "Boop Bot Keybound",
       date: new Date("2025-01-18T14:23:17.482"),
@@ -46,15 +37,6 @@
       tags: ["Unity", "ML-Agents"],
     },
     {
-      name: "Plants Vs Pesticides",
-      date: new Date("2024-12-01T16:05:33.756"),
-      desc: "1st place UI/UX - uOttawa Hack",
-      details:
-        "Won first place in the UI/UX challenge at uOttawa Hack 7. Created an engaging game with custom visual and auditory elements, focusing on intuitive user experience and polished interface design.",
-      github: "https://github.com/BradyKearley/Plants-Vs-Pesticides",
-      tags: ["Game Dev", "UI/UX"],
-    },
-    {
       name: "Steganography Encryption",
       date: new Date("2024-10-15T11:28:09.641"),
       desc: "RSA encryption + image steganography",
@@ -62,6 +44,27 @@
         "Produced government-level RSA encryption and implemented steganography techniques for secure data transfer. Messages are encrypted then hidden within image files, making the data invisible to casual observation.",
       github: "https://github.com/BradyKearley/Steganography",
       tags: ["Python", "Encryption", "C"],
+    },
+  ];
+
+  const otherProjects = [
+    {
+      name: "Personal Portfolio",
+      date: new Date("2025-12-01T18:30:45.127"),
+      desc: "Minimal time-themed portfolio with live timestamps",
+      details:
+        "Built a unique portfolio website featuring millisecond-precision live timestamps and countdown timers. Designed with a minimal aesthetic using SvelteKit, TypeScript, and Svelte 5 runes for state management.",
+      github: "https://github.com/BradyKearley/Personal-Website",
+      tags: ["SvelteKit", "TypeScript"],
+    },
+    {
+      name: "Plants Vs Pesticides",
+      date: new Date("2024-12-01T16:05:33.756"),
+      desc: "1st place UI/UX - uOttawa Hack",
+      details:
+        "Won first place in the UI/UX challenge at uOttawa Hack 7. Created an engaging game with custom visual and auditory elements, focusing on intuitive user experience and polished interface design.",
+      github: "https://github.com/BradyKearley/Plants-Vs-Pesticides",
+      tags: ["Game Dev", "UI/UX"],
     },
     {
       name: "Carleton 360+",
@@ -94,6 +97,7 @@
 
   let expandedProject: string | null = $state(null);
   let expandedExperience: string | null = $state(null);
+  let showAllProjects: boolean = $state(false);
 
   function toggleProject(name: string) {
     expandedProject = expandedProject === name ? null : name;
@@ -101,6 +105,10 @@
 
   function toggleExperience(role: string) {
     expandedExperience = expandedExperience === role ? null : role;
+  }
+
+  function toggleAllProjects() {
+    showAllProjects = !showAllProjects;
   }
 
   const experience = [
@@ -300,10 +308,10 @@
   <!-- Projects -->
   <section class="section">
     <div class="section-header">
-      <span class="section-label">// projects</span>
+      <span class="section-label">// featured projects</span>
     </div>
     <ul class="project-list">
-      {#each projects as project}
+      {#each featuredProjects as project}
         <li
           class="project-item"
           class:expanded={expandedProject === project.name}
@@ -339,6 +347,56 @@
         </li>
       {/each}
     </ul>
+
+    <!-- All Projects Dropdown -->
+    <div class="all-projects-section">
+      <button class="all-projects-toggle" onclick={toggleAllProjects}>
+        <span>other projects ({otherProjects.length})</span>
+        <span class="expand-icon">{showAllProjects ? "−" : "+"}</span>
+      </button>
+      {#if showAllProjects}
+        <ul class="project-list" transition:slide={{ duration: 200 }}>
+          {#each otherProjects as project}
+            <li
+              class="project-item"
+              class:expanded={expandedProject === project.name}
+            >
+              <button
+                class="project-toggle"
+                onclick={() => toggleProject(project.name)}
+              >
+                <div class="project-main">
+                  <span class="project-name">{project.name}</span>
+                  <span class="project-desc">{project.desc}</span>
+                </div>
+                <div class="project-right">
+                  <Countdown targetDate={project.date} size="sm" />
+                  <span class="expand-icon"
+                    >{expandedProject === project.name ? "−" : "+"}</span
+                  >
+                </div>
+              </button>
+              {#if expandedProject === project.name}
+                <div
+                  class="project-details"
+                  transition:slide={{ duration: 200 }}
+                >
+                  <p>{project.details}</p>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener"
+                    class="project-link"
+                  >
+                    → View on GitHub
+                  </a>
+                </div>
+              {/if}
+            </li>
+          {/each}
+        </ul>
+      {/if}
+    </div>
   </section>
 
   <hr class="divider" />
@@ -734,6 +792,37 @@
 
   .project-link:hover {
     text-decoration: underline;
+  }
+
+  /* All Projects Dropdown */
+  .all-projects-section {
+    margin-top: var(--space-md);
+  }
+
+  .all-projects-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.875rem;
+    transition:
+      border-color 0.2s,
+      color 0.2s;
+  }
+
+  .all-projects-toggle:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+  }
+
+  .all-projects-section .project-list {
+    margin-top: var(--space-sm);
   }
 
   /* Contact */
